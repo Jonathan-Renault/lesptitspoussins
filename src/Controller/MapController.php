@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-//use App\Entity\ProProfil;
+
 use App\Entity\ProProfil;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -62,14 +62,9 @@ class MapController extends AbstractController
         //public function index(ProProfil $info_infra)
     {
 
-        $id = …;
+        $repository = $this->getDoctrine()->getRepository(ProProfil::class);
 
-
-        $em = $this->container->get("doctrine.orm.default_entity_manager");
-        $entities = $em->getRepository(ProProfil::class)->findBy([
-            "id" => $id,
-
-        ]);
+        $pro = $repository->findAll();
 
         $adress = array(
             'street'    => '24 place st marc',
@@ -106,6 +101,7 @@ class MapController extends AbstractController
             'lon' => $json_data[0]['lon'],
             'infra' => $infra,
             'description' => $description,
+            'pro' => $pro,
         ]);
     }
 
