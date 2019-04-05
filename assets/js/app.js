@@ -9,6 +9,7 @@
 require('../css/reset.css');
 require('../css/app.css');
 require('bootstrap/dist/css/bootstrap.min.css');
+//require('map.js');
 // Need jQuery? Install it with "yarn add jquery", then uncomment to require it.
 const $ = require('jquery');
 
