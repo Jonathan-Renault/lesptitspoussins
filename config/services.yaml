@@ -79,3 +79,18 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    # ...
+    admin.parentt:
+        class: App\Admin\ParenttAdmin
+        arguments: [~, App\Entity\Parentt, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Parent }
+
+    admin.enfantProfil:
+        class: App\Admin\EnfantProfilAdmin
+        arguments: [~, App\Entity\EnfantProfil, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Profil Enfant }
+
+

@@ -22,6 +22,20 @@ class ProProfilRepository extends ServiceEntityRepository
     // /**
     //  * @return ProProfil[] Returns an array of ProProfil objects
     //  */
+
+   /* public function findAllPro()
+    {
+        $entityManager = $this->getEntityManager();
+
+        $query = $entityManager->createQuery(
+            'SELECT u FROM App\Entity\ProProfil'
+        );
+
+        return $query->execute();
+    }*/
+
+
+
     /*
     public function findByExampleField($value)
     {
@@ -36,15 +50,20 @@ class ProProfilRepository extends ServiceEntityRepository
     }
     */
 
-    /*
+
     public function findOneBySomeField($value): ?ProProfil
     {
         return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
+            ->andWhere('p.id = :val')
             ->setParameter('val', $value)
+            ->select(["p.id","p.nom_entreprise"])
             ->getQuery()
-            ->getOneOrNullResult()
-        ;
+            ->getResult()
+            ;
     }
-    */
+
 }
+
+
+
+
