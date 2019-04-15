@@ -4,6 +4,7 @@ namespace App\Controller;
 
 
 use App\Entity\ProProfil;
+use App\Repository\ProProfilRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -57,13 +58,12 @@ class MapController extends AbstractController
      * @Route("/map2", name="map2")
      */
 
-    public function index2()
-        //public function index(ProProfil $info_infra)
+    //public function index2(ProProfilRepository $proProfilRepositoryvalue)
+    public function index2(ProProfilRepository $proProfilRepositoryvalue)
+
     {
 
-        $repository = $this->getDoctrine()->getRepository(ProProfil::class);
-
-        $pro = $repository->findAll();
+        $test = $proProfilRepositoryvalue->findOneBySomeField(1);
 
         $adress = array(
             'street'    => '24 place st marc',
@@ -100,7 +100,7 @@ class MapController extends AbstractController
             'lon' => $json_data[0]['lon'],
             'infra' => $infra,
             'description' => $description,
-            'pro' => $pro,
+            'pro' => $test,
         ]);
     }
 
