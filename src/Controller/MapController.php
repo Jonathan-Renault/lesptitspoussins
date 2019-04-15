@@ -16,7 +16,6 @@ class MapController extends AbstractController
     public function index()
     {
 
-
            $adress = array(
             'street'    => '24 place st marc',
             'city'      => 'Rouen',
@@ -55,7 +54,7 @@ class MapController extends AbstractController
     }
 
     /**
-     * @Route("/map2", name="map")
+     * @Route("/map2", name="map2")
      */
 
     public function index2()
