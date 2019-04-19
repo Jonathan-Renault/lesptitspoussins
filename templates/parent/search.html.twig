@@ -9,7 +9,7 @@
     <div id="mapid"></div>
 
 
-    <p>{{ dump(pro) }}</p>
+    <p>{{ dump() }}</p>
 
 
     <script>
@@ -28,7 +28,9 @@
                     },
                     "type": "Feature",
                     "properties": {
-                        "popupContent": "{{ infra }}"
+                        "popupContent": "{{ infra }}",
+                        "popupContent2": "{{ description }}",
+
                     },
                     "id": 51
 
